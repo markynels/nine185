@@ -18,7 +18,7 @@ body {
 body {
    background:
     linear-gradient(rgba(14, 16, 15, 0.881), rgba(13, 14, 14, 0.883)), /* Color overlay */
-    -webkit-image-set(url('background4.png') 1x, url('background4.png') 2x) center / cover no-repeat, /* Background image */
+    -webkit-image-set(url('background8.png') 1x, url('background8.png') 2x) center / cover no-repeat, /* Background image */
     radial-gradient(1200px 600px at 80% -10%, #0b0b0bf0 0%, rgba(19, 20, 20, 0.853) 40%),
     radial-gradient(900px 600px at 0% 100%, #161717 0%, rgba(9, 9, 9, 0.834) 80%),
     #0f0f0f;

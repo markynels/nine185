@@ -28,31 +28,50 @@ body {
 }
 :root { --img-focus-y: 50%; }
 
-@media (max-width: 768px) and (orientation: portrait) {
-  :root { --img-focus-y: 62%; }
+/* LANDSCAPE phones & tablets: show whole image (no crop) */
+@media (max-width: 1024px) and (orientation: landscape) {
   body {
-    /* Bias the crop higher if subject is near the top */
+    background-size:
+      auto,           /* overlay gradient */
+      contain,        /* <-- image: avoid zoom/crop in landscape */
+      1200px 600px,   /* radial 1 */
+      900px 600px,    /* radial 2 */
+      auto;
+
     background-position:
-      center center,
-      center calc(20%),   /* try 6–12vh */
+      center center,  /* overlay gradient */
+      50% 60%,        /* image focus a bit lower; tweak to taste */
       center center,
       left bottom,
       center center;
+
+    background-repeat:
+      no-repeat, no-repeat, no-repeat, no-repeat, no-repeat;
+
+    /* in case contain introduces side/top bars, this sits behind the image */
+    background-color: #0f0f0f;
+  }
+}
+
+/* ULTRA-WIDE desktops: also avoid heavy crop (optional) */
+@media (min-aspect-ratio: 16/9) and (min-width: 1200px) {
+  body {
     background-size:
       auto,
-      auto 100svh,
+      contain,        /* fit image instead of aggressive cover crop */
       1200px 600px,
       900px 600px,
       auto;
 
-    background-repeat:
-      no-repeat,
-      no-repeat,
-      no-repeat,
-      no-repeat,
-      no-repeat;
+    background-position:
+      center center,
+      50% 80%,        /* desktop focus; adjust as needed */
+      center center,
+      left bottom,
+      center center;
   }
 }
+
 
 .full-height-container {
 height: -webkit-fill-available; /* For Safari/iOS Chrome */

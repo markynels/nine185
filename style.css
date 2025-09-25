@@ -23,7 +23,7 @@ body {
     radial-gradient(900px 600px at 0% 100%, #161717 0%, rgba(9, 9, 9, 0.834) 80%),
     #0f0f0f;
 
-   background-attachment: scroll;
+   background-attachment: fixed;
    --darkreader-ignore: true;
 }
 :root { --img-focus-y: 50%; }
@@ -108,7 +108,6 @@ height: 100%;
   @media (max-width:420px){ .email-grid{grid-template-columns:1fr} }
 
 body{
-  min-height:100vh;
   display: flex;
   flex-direction: column;
   font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, Apple Color Emoji, Segoe UI Emoji;

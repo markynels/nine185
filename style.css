@@ -26,7 +26,10 @@ body {
    background-attachment: scroll;
    --darkreader-ignore: true;
 }
+:root { --img-focus-y: 50%; }
+
 @media (max-width: 768px) and (orientation: portrait) {
+  :root { --img-focus-y: 62%; }
   body {
     /* Bias the crop higher if subject is near the top */
     background-position:
@@ -37,7 +40,7 @@ body {
       center center;
     background-size:
       auto,
-      contain,
+      auto 100svh,
       1200px 600px,
       900px 600px,
       auto;
